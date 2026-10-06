@@ -27,7 +27,7 @@ def main() -> int:
     args = ap.parse_args()
 
     hw = labkit.load_hardware()
-    model = str(labkit.repo_root() / labkit.load_active()["primary_model"])
+    model = str(pathlib.Path(labkit.load_active()["primary_model"]))
     ram = hw.get("ram_gb", 8)
 
     if args.grid:

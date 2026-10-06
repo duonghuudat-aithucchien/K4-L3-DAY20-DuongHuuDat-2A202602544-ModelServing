@@ -44,7 +44,7 @@ def main() -> int:
 
     hw = labkit.load_hardware()
     active = labkit.load_active()
-    model = str(labkit.repo_root() / active["primary_model"])
+    model = active["primary_model"]
     ngl = labkit.n_gpu_layers(hw)
     grid = thread_grid(hw)
     physical = hw.get("cpu", {}).get("cores_physical")
